@@ -1,6 +1,9 @@
 ## CarParkPJ
 Is about Carpark sensor
 
-## Use
-- Javas
-- HTML
+## Requirements
+
+- python
+- flask
+- flask_pymongo
+- C
