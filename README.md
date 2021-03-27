@@ -2,5 +2,5 @@
 Is about Carpark sensor
 
 ## Use
-- Javesp
+- Javas
 - HTML
