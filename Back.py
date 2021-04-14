@@ -1,9 +1,12 @@
 from flask import Flask, request
 from flask_pymongo import PyMongo
+from bson.json_util import loads, dumps
 import bcrypt
+# import bcrypt
+
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://192.168.1.12:27017/carpark'
+app.config['MONGO_URI'] = 'mongodb://192.168.1.10:27017/carpark'
 mongo = PyMongo(app)
 
 myCollection1 = mongo.db.park
@@ -38,9 +41,20 @@ def insert_one():
     data = request.json
     passs = data['passwd'].encode()
     hashed = bcrypt.hashpw(passs, bcrypt.gensalt())
+    hashed = hashed.decode()
     myCollection2.insert_one({'username':data['username'],'passwd': hashed })
     return {'result': 'Created successfully'}
 
+@app.route('/find_alluser',methods=['GET'])
+def uuasdasd():
+    recon = myCollection2.find()
+    output = []
+    for i in recon:
+        output.append({
+            "username": i["username"],
+            "passwd": i["passwd"]
+        })
+    return { "result" : output }
 
 @app.route('/find_all', methods=['GET'])
 def find():
@@ -62,11 +76,19 @@ def fiuser():
     data = request.json
     if data['username'] in user:
         name = data['username']
-        password = data['passwd'].encode()
+        password = data['passwd']
         data2 = myCollection2.find({'username': name})
-        he = data2['passwd'].encode()
-        # error
-        if bcrypt.checkpw(password, he ):
+        output = []
+        for i in data2:
+            check = i['passwd']
+            output.append({
+            "username": i["username"],
+            "passwd": i["passwd"],
+        })
+        # return {'result': check}
+        check = check.encode()
+        password = password.encode()
+        if bcrypt.checkpw(password, check ):
             return {'result':1}
         else:
             return {'result':2}
@@ -77,7 +99,7 @@ def fiuser():
 @app.route('/reset', methods=['POST'])
 def reset():
     """DELETE all data in database"""
-    myCollection1.delete_many({})
+    myCollection2.delete_many({})
     return {'result':' Delete Successfully'}
 
 
