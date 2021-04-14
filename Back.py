@@ -120,7 +120,34 @@ def update_one():
             return {'result':0}
         
     
+########################################### HARDWARE #########################################
 
+@app.route('/light_status',methods=['GET'])
+def lightha():
+    data = request.args.get('idName')
+    query = myCollection1.find({'idName':data})
+    for i in query:
+        if i['light'] == 1:
+            return {'light': 1}
+        else:
+            return {'light' : 0}
+    return {'light':'error'}
+
+
+@app.route('/light_hard',methods=['POST'])
+def lightupup():
+    data = request.json
+    name = data['idName']
+    data2 = myCollection1.find({'idName': name})
+    for i in data2:
+        if i['light'] == 0:
+            newvalues = { "$set": { 'light': 1 } }
+            myCollection1.update_one({'idName': name},newvalues)
+            return {'result':'update to 1'}
+        else :
+            newvalues = { "$set": { 'light': 0 } }
+            myCollection1.update_one({'idName': name},newvalues)
+            return {'result':'update to 0'}
 
 
 ########################################### RESET ############################################
