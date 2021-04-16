@@ -3,7 +3,7 @@ const data={
     bank: "123456"
 }
 
-const route = "192.168.1.10/"
+const route = "http://192.168.1.10:2222/"
 
 function login(){
     const user = document.getElementById("user_box")["value"]
@@ -16,12 +16,12 @@ function login(){
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username:user,passwd:password }),
             }).then((response) => response.json()).then((datas) => {
-            if(datas["result"]==="1")
+            if(datas["result"]===1)
             {
                 sessionStorage.setItem('status','loggedIn') 
-                // window.location.replace("main.html");    
+                window.location.replace("main.html");    
             }
-            else if (datas["result"]==="2")
+            else if (datas["result"]===2)
             {
                 var popup = document.getElementById("myPopup");
                 popup.classList.toggle("show");
