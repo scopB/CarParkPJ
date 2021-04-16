@@ -3,7 +3,7 @@ const data={
     bank: "123456"
 }
 
-const route = "192.168.1.12/"
+const route = "192.168.1.10/"
 
 function login(){
     const user = document.getElementById("user_box")["value"]
@@ -11,7 +11,7 @@ function login(){
     let check = true;
     if(user !== "" && password !== "")
     {
-        fetch(route + "USER/find_user", {
+        fetch(route + "find_user", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username:user,passwd:password }),
@@ -19,7 +19,7 @@ function login(){
             if(datas["result"]==="1")
             {
                 sessionStorage.setItem('status','loggedIn') 
-                window.location.replace("main.html");    
+                // window.location.replace("main.html");    
             }
             else if (datas["result"]==="2")
             {

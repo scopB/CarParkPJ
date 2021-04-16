@@ -1,4 +1,4 @@
-const route = "192.168.1.12/"
+const route = "192.168.1.10/"
 
 var park = {
   1: "1",
@@ -8,16 +8,16 @@ var park = {
 
 let count = 0;
 
-// console.log(sessionStorage.getItem('status'));
-// if (sessionStorage.getItem('status') === 'loggedIn'){
-//   //redirect to page
-//   // alert("Is Login : True");
-//   }
-// else{
-//   window.location.replace("login.html")
-//   //show validation message
-//   //  alert("Is Login : False");
-// }
+console.log(sessionStorage.getItem('status'));
+if (sessionStorage.getItem('status') === 'loggedIn'){
+  //redirect to page
+  // alert("Is Login : True");
+  }
+else{
+  window.location.replace("login.html")
+  //show validation message
+  //  alert("Is Login : False");
+}
 
 
 function logout()
@@ -29,21 +29,21 @@ function logout()
 function getstatus()
 {
   var i = 0;
-  // fetch(route + "/PARK/find_all", {
-  //       method: "GET",
-  //       headers: { "Content-Type": "application/json" },
+  fetch(route + "find_all", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
 
-  //   }).then((response) => response.json())
-  //   .then((datas) => {
-  //     datas.forEach(data => {
-  //       park[data["idName"]] = data["light"];
-  //       if(data["light"] === "0")
-  //       {
-  //         i++;
-  //       }
-  //     });
-  //     count = i;
-  //   })
+    }).then((response) => response.json())
+    .then((datas) => {
+      datas.forEach(data => {
+        park[data["idName"]] = data["light"];
+        if(data["light"] === "0")
+        {
+          i++;
+        }
+      });
+      count = i;
+    })
 }
 
 function changestatus()
@@ -80,12 +80,12 @@ function sentinfo(x)
   {
     if(confirm("Want to reserve this"))
     {
-      // fetch(route+"/PARK/update_light",
-      // {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ idName:parseInt(x)}),
-      // }).then((response) => console.log(response)).then(jj=>{console.log("success");});
+      fetch(route+"update_light",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idName:parseInt(x)}),
+      }).then((response) => console.log(response)).then(jj=>{console.log("success");});
     }
   }
 }

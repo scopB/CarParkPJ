@@ -3,7 +3,7 @@ const data={
     bank: "123456"
 }
 
-const route = "192.168.1.12/"
+const route = "192.168.1.10/"
 
 function register()
 {
@@ -16,10 +16,10 @@ function register()
         alert("Please inform all");
     }
     else{
-        fetch(route + "USER/find_user", {
+        fetch(route + "find_user", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username:user,passwd:password }),
+            body: JSON.stringify({ username:user,passwd:password1 }),
             }).then((response) => response.json()).then((datas) => {
             if(datas["result"]==="1" || datas["result"]==="2")
             {
@@ -34,7 +34,7 @@ function register()
                 }
                 else
                 {
-                    fetch(route + "USER/register", {
+                    fetch(route + "register", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ username:user,passwd:password }),
