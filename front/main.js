@@ -35,7 +35,7 @@ function getstatus()
 
     }).then((response) => response.json())
     .then((datas) => {
-      datas.forEach(data => {
+      datas["result"].forEach(data => {
         park[data["idName"]] = data["light"].toString();
         if(data["light"] === 0)
         {
