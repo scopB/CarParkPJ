@@ -37,7 +37,7 @@ function register()
                     fetch(route + "register", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ username:user,passwd:password }),
+                        body: JSON.stringify({ username:user,passwd:password1 }),
                         }).then((response) => console.log(response)).then(jj=>{console.log("success");});
                 }
             }
