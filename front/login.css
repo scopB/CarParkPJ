@@ -113,17 +113,7 @@ html,body{
 form .field input:valid{
   border-color: #4158d0;
 }
-.wrapper form .field label{
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  color: #999999;
-  font-weight: 400;
-  font-size: 17px;
-  pointer-events: none;
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
-}
+
 form .field input:focus ~ label,
 form .field input:valid ~ label{
   top: 0%;
@@ -166,14 +156,15 @@ form .popup
 {
   color: #fff;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   padding-left: 0;
   border: none;
   border-radius: 25px;
-  width: 100px;
+  width: 320px;
   height:30px;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   bottom:0px;
-  right:-35%;
+  /* right:-35%; */
 }
+
 
