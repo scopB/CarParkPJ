@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
-    <h1>Log in</h1>
-    <div id="box">
-        <label class="title" id="user">User Name:</label>
-        <input type="text" name="user" id="user_box">
-        <br>
-        <label class="title" id="password">password:</label>
-        <input type="password" name="password" id="password_box">
-        <br>
-        <label>not member?</label>
-        <a href="register.html">Register</a>
-        <button  class="popup" id="submit" type="submit" onclick="login()">
-            login<span class="popuptext" id="myPopup">wrong password</span>
-            <span class="popuptext" id="myPopup2">Wrong username</span>
-        </button>
+    <div class="wrapper">
+        <div class="title">
+            Login Form</div>
+
+
+        <form action="#">
+            <div class="field">
+                <label id="user">User Name</label>
+                <input type="text" name="user" id="user_box" required>
+            </div>
+            <div class="field">
+                <label id="password">password</label>
+                <input type="password" name="password" id="password_box" required>
+            </div>
+
+            <button class="popup" id="submit" type="submit" onclick="login()">
+                login<span class="popuptext" id="myPopup">wrong password</span>
+                <span class="popuptext" id="myPopup2">Wrong username</span>
+            </button>
+            <div class="signup-link">
+                Not a member? <a href="register.html">Signup now</a>
+            </div>
+        </form>
     </div>
 </body>
+
 </html>
 <script src="login.js"></script>
