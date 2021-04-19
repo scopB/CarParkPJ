@@ -121,17 +121,3 @@ form .regi1
   /* margin: center; */
 }
 
-form .regi2
-{
-  color: #fff;
-  font-size: 20px;
-  margin-top: 20px;
-  padding-left: 0;
-  border: none;
-  border-radius: 25px;
-  width: 320px;
-  height:30px;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  bottom:0px;
-  /* margin: center; */
-}
