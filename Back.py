@@ -117,7 +117,6 @@ def find():
     for ele in query:
         output.append({
             "light": ele["light"],
-            "car": ele["car"],
             "idName": ele["idName"]
         })
 
