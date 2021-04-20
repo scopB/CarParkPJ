@@ -27,7 +27,7 @@ code สำหรับ hardware ถูกเก็บใน usb-example ซึ�
                                   
 ## Contributors
 
-This project is part of the course Practicum 01204223 in Computer Engineering Faculty of Engineering kasetsart University
+This project is part of the course Practicum 01204223 in Computer Engineering Faculty of Engineering Kasetsart University
 
 -Project Link: <https://github.com/scopB/CarParkPJ>
 -Present Link: <https://youtu.be/qMmpcOmm_og>
