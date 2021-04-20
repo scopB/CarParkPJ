@@ -3,6 +3,9 @@ const data={
     bank: "123456"
 }
 
+const route = "http://192.168.1.10:2222/";
+
+
 function register()
 {
     user=document.getElementById("username_box")["value"];
@@ -14,24 +17,50 @@ function register()
         alert("Please inform all");
     }
     else{
-        let check = false;
-        Object.keys(data).forEach(id => {
-            if(user === id)
+        fetch(route + "find_user", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username:user,passwd:password1 }),
+            }).then((response) => response.json()).then((datas) => {
+            if(datas["result"]==="1" || datas["result"]==="2")
             {
                 alert("This user already register");
                 check = true;
             }
+            else 
+            {
+                if(password1 !== password2)
+                {
+                    alert("please check your confirm password")
+                }
+                else
+                {
+                    fetch(route + "register", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ username:user,passwd:password1 }),
+                        }).then((response) => console.log(response)).then(jj=>{console.log("success");});
+                }
+            }
         });
-        if(!check)
-        {
-            if(password1 !== password2)
-            {
-                alert("please check your confirm password")
-            }
-            else
-            {
-                alert("register Success")
-            }
-        } 
+        // let check = false;
+        // Object.keys(data).forEach(id => {
+        //     if(user === id)
+        //     {
+        //         alert("This user already register");
+        //         check = true;
+        //     }
+        // });
+        // if(!check)
+        // {
+        //     if(password1 !== password2)
+        //     {
+        //         alert("please check your confirm password")
+        //     }
+        //     else
+        //     {
+        //         alert("register Success")
+        //     }
+        // } 
     }
 }

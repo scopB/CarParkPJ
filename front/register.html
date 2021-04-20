@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="register.css">
 </head>
+
 <body>
-    <button id="toLogin" onclick="window.location.replace('login.html')">Back to log in</button>
-    <div>
-        <label class = "info" id="username">Username: </label>
-        <input type="text" id="username_box">
-        <br>
-        <label class = "info" id="password1">Password: </label>
-        <input type="password" name="password1" id="password1_box">
-        <br>
-        <label class = "info" id="password2">Confirm Password: </label>
-        <input type="password" name="password2" id="password2_box">
-        <br>
-        <button id="register" onclick="register()">Register</button>
+    <div class="wrapper">
+        
+        <div class="title">
+            Register Form</div>
+            
+        <form action=#>
+            <div>
+                <div class="field">
+                    <label  id="username">Username: </label>
+                    <input type="text" id="username_box">
+                </div>
+
+                <div class="field">
+                    <label  id="password1">Password </label>
+                    <input type="password" name="password1" id="password1_box">
+                </div>
+                
+                <div class="field">
+                    <label  id="password2">Confirm Password: </label>
+                    <input type="password" name="password2" id="password2_box">
+                </div>
+                <button class="regi1" id="register" onclick="register()">Register</button>
+                <div class="signup-link">
+                    You member? <a href="login.html">Signin now</a>
+                </div>
+                
+            </div>
+            
+        </form>
+        
     </div>
+    <!-- <button class="regi2" id="toLogin" onclick="window.location.replace('login.html')">Back to log in</button> -->
 </body>
+
 </html>
 <script src="register.js"></script>

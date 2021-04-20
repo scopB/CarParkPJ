@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Main Home</title>
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <div>
-        <h1>
-            Main นะจ้ะ
-        </h1>
-    </div>
-    <div >
+    <section class="snow-bg"></section>
+    <div id="header">
         <button id="logout" onclick="logout()">Log Out</button>
+        <div id="count_box">
+            <label id="count"></label>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" id="card_pk1" onclick="sentinfo('1')">
+            <div class="available">
+                <label forcheckstat id="status_pk1"></label>
+            </div>
+
+        </div>
+        <div class="card" id="card_pk2" onclick="sentinfo('2')">
+
+            <div class="available">
+                <label id="status_pk2"></label>
+            </div>
+
+        </div>
+
+    </div>
     </div>
 </body>
+
 </html>
 <script src="main.js"></script>

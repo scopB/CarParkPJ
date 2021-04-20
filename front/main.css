@@ -1,0 +1,121 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card{
+    width: 7rem;
+    height: 13rem;
+    background-color: hsl(101, 61%, 50%);
+    border: 1px  black;
+    margin: 0rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px
+
+}
+
+#count_box{
+    width: 13rem;
+    height: 7rem;
+    background-color: hsl(56, 85%, 65%);
+    border: 1px  black;
+    margin: 0rem 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px
+}
+
+#logout
+{
+    width: 13rem;
+    height: 4rem;
+}
+.allbox_alert{
+    width: 100%;
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.alert{
+    width: 7rem;
+    height: 5rem;
+    background-color: rgb(184, 83, 235);
+    border: solid darkorchid;
+    margin: 0rem 1rem;
+    display: flex;
+    align-items: center;
+    padding: 27px;
+    border-radius: 30px;
+    text-align: left;
+    font-size: 15px;
+    color: white
+}
+
+.a{
+    border: 1px solid black;
+    background-color: solid black;
+    /* visibility: hidden; */
+    display: none;
+
+}
+
+.available{
+    /* border: 1px solid black; */
+    color: white;
+}
+
+
+/* sakura */
+body {
+    background-color: #333;
+    background-image: url("https://cdn.hipwallpaper.com/i/90/78/4RLbmZ.jpg");
+  }
+  
+.snow-bg {
+     content: '';
+     display: block;
+     position: absolute;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     pointer-events: none;
+     background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+      animation: snow 10s linear infinite;
+  }
+  
+  @keyframes snow {
+   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+  }
+  
+  @media (max-width: 768px) {
+      .woocommerce ul.products li.product, 
+      .woocommerce-page ul.products li.product, 
+      .woocommerce-page[class*=columns-] ul.products li.product,
+      .woocommerce[class*=columns-] ul.products li.product {
+          width: 100%;
+          float: left;
+          clear: both;
+          margin: 0 7em;
+      }
+  }
