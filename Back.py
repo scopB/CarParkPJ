@@ -1,13 +1,12 @@
 from flask import Flask, request
 from flask_pymongo import PyMongo
-from bson.json_util import loads, dumps
 import bcrypt
 from flask_cors import CORS, cross_origin
 # import bcrypt
 
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://192.168.1.10:27017/carpark'
+app.config['MONGO_URI'] = 'mongodb://192.168.1.4:27017/carpark'
 mongo = PyMongo(app)
 
 myCollection1 = mongo.db.park
@@ -192,3 +191,7 @@ def resetasd():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='2222', debug=True)
+
+
+
+
