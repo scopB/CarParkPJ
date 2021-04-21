@@ -1,9 +1,8 @@
-const route = "http://192.168.1.10:2222/"
+const route = "http://192.168.1.4:2222/"
 
 var park = {
   1: "1",
   2: "1",
-  3: "1",
 }
 
 let count = 0;
@@ -35,7 +34,9 @@ function getstatus()
 
     }).then((response) => response.json())
     .then((datas) => {
+        // console.log(datas)
       datas["result"].forEach(data => {
+          console.log(data)
         park[data["idName"]] = data["light"].toString();
         if(data["light"] === 0)
         {
