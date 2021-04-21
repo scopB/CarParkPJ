@@ -35,6 +35,7 @@ Database and Storage: Mongodb
 code สำหรับ hardware ถูกเก็บใน usb-example ซึ่งเป็นการประมวลผลสำหรับการทำงานผ่าน USB ซึ่งประกอบไปด้วย
 - firmware โฟลเดอร์ สำหรับ firmware ของ microcontroler
 - main.py โค้ดสำหรับควบคุมการทำงาน microcontroler
+
 โดยเราใช้อุปกรณ์ที่ประกอบไปก้วย
 - mcu Borad *1
 - Rasberrypi3 *1
