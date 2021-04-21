@@ -3,7 +3,7 @@ const data={
     bank: "123456"
 }
 
-const route = "http://192.168.1.10:2222/"
+const route = "http://192.168.1.4:2222/"
 
 function login(){
     const user = document.getElementById("user_box")["value"]
